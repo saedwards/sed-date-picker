@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "sed-date-picker": [
+        "dist/sed-date-picker"
+      ],
+      "sed-date-picker/*": [
+        "dist/sed-date-picker/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

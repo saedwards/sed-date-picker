@@ -1,0 +1,212 @@
+$cellSize: 3rem;
+
+.sed-date-picker {
+  position : relative;
+  display : inline-block;
+  font-family : arial;
+  box-shadow: 0 8px 8px #ccc;
+  border-radius: 5px;
+  background-color : #fff;
+
+  * {
+    box-sizing : border-box;
+  }
+
+  .button {
+    padding : .5rem .7rem;
+    border : none;
+    border-radius : 5px;
+    background-color : #f5f5f5;
+    transition : background-color 300ms;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color : #e5e5e5;
+  }
+
+  .button:active,
+  .button:focus {
+    background-color : #ffce26;
+    outline : none;
+  }
+
+  .days,
+  .dates {
+    display: grid;
+    grid-template-columns: $cellSize $cellSize $cellSize $cellSize $cellSize $cellSize $cellSize;
+  }
+
+  .days {
+    margin-top : 1rem;
+    border-bottom : 1px solid #e9e9e9;
+  }
+
+  .dates {
+    grid-template-rows: $cellSize $cellSize $cellSize $cellSize $cellSize $cellSize;
+  }
+
+  .date-rows-4 {
+    grid-template-rows: $cellSize $cellSize $cellSize $cellSize;
+  }
+
+  .date-rows-5 {
+    grid-template-rows: $cellSize $cellSize $cellSize $cellSize $cellSize;
+  }
+
+  .day,
+  .date {
+    width: 15%;
+    text-align: center;
+  }
+
+  .day,
+  .date {
+    height: 100%;
+    width: 100%;
+  }
+
+  .day {
+    display: block;
+  }
+
+  .date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .day-label {
+    display : block;
+    padding: .35rem 0;
+    font-size: .78rem;
+    color : #0092b9;
+  }
+
+  .date-button {
+    height: 100%;
+    width: 100%;
+    font-size : .95rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-radius : 0;
+    transition: background-color 300ms, border-radius 300ms;
+  }
+
+  .date-button:hover {
+    background-color: #e5e5e5;
+  }
+
+  .date-button:focus,
+  .date-button:active {
+    color : #fff;
+    background-color: #0092b9;
+    outline: none;
+    border: 1px solid #0092b9;
+    box-shadow: inset 0 0 0 2px white;
+    border-radius : 100%;
+  }
+
+  .controls {
+    margin : .3rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom : .3rem;
+
+    .next-month-button,
+    .prev-month-button {
+      display : flex;
+      width : 2.5rem;
+    }
+
+    .next-month-button > *,
+    .prev-month-button > * {
+      width : 100%;
+      height : 100%;
+    }
+
+    .month-select-button-label {
+      display : inline-block;
+      padding : .2rem 0;
+      font-size : 1rem;
+    }
+
+    .month-select-icon-open,
+    .month-select-icon {
+      position : relative;
+      display : inline-block;
+
+      > * {
+        width : 13px;
+      }
+    }
+
+    .month-select-icon {
+      top : .2rem;
+      margin-left : .2rem;
+    }
+
+    .month-select-icon-open {
+      position : relative;
+      top : -2px;
+      right : -3px;
+    }
+
+    .month-select-button-container.is-open {
+      box-shadow: 0 8px 8px #ccc;
+    }
+
+    .month-select-button.is-open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      background-color : #ffce26;
+    }
+
+    .month-select-options-container {
+      position : absolute;
+      top : 45px;
+      right : -1rem;
+      left : 5rem;
+      bottom : -1rem;
+      max-height : 600%;
+    }
+
+    .month-select-options-wrap {
+      display : block;
+      max-height : 100%;
+      overflow-y : auto;
+      border-radius : 5px;
+      border-top : 4px solid #ffce26;
+      border-bottom : 4px solid #ffce26;
+      background-color : #ffce26;
+      box-shadow: 0 8px 8px #ccc;
+    }
+
+    .month-select-options {
+      display: block;
+      width : 100%;
+      background-color : #f5f5f5;
+    }
+
+    .month-select-option {
+      display : flex;
+      justify-content: space-between;
+      width : 100%;
+      padding-top : .7rem;
+      padding-bottom : .7rem;
+      white-space : nowrap;
+      text-align : left;
+      font-size : .78rem;
+      border-radius : 0;
+    }
+
+    .month-select-word {
+      font-weight : 600;
+    }
+
+    .month-select-year {
+      margin-left : 1rem;
+    }
+  }
+}

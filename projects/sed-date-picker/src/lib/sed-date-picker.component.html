@@ -1,0 +1,78 @@
+<div class="sed-date-picker" #container>
+  <div class="controls">
+    <button type="button" class="button prev-month-button" (click)="prevMonth()">
+      <svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" width="95.667px" height="64px" viewBox="0 0 95.667 64" xml:space="preserve">
+        <path d="M95.667,38h-76c0,0,11.444,9.91,13,14c3.084,8.11,0,12,0,12L0,32L32.667,0c0,0,3.208,4.485,0,12c-1.389,3.253-13,14-13,14
+        h76V38z"/>
+      </svg>
+    </button>
+    <span class="month-select-button-container"
+      [ngClass]="{'is-open': monthSelectOpen}">
+      <button type="button" class="button month-select-button"
+        (click)="toggleMonthSelect();"
+        [ngClass]="{'is-open': monthSelectOpen}">
+        <span class="month-select-button-label">
+          {{monthName}} {{year}}
+        </span>
+        <span class="month-select-icon-open">
+          <svg *ngIf="monthSelectOpen"
+            version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+               x="0px" y="0px" viewBox="0 0 64 34.094" xml:space="preserve">
+            <path d="M26,19.668c0,0-9.91,11.444-14,13c-8.109,3.085-12,0-12,0L32,0.001l32,32.667c0,0-4.484,3.208-12,0
+              c-3.253-1.389-14-13-14-13l-6-6.279L26,19.668z"/>
+          </svg>
+        </span>
+        <span class="month-select-icon">
+          <svg *ngIf="!monthSelectOpen"
+            version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+               x="0px" y="0px" viewBox="0 0 64 55.667" xml:space="preserve">
+            <path d="M38,14.426c0,0,9.91-11.444,14-13c8.11-3.084,12,0,12,0L32,34.093L0,1.426c0,0,4.485-3.208,12,0c3.253,1.389,14,13,14,13
+              l6,6.28L38,14.426z"/>
+          </svg>
+        </span>
+      </button>
+      <span class="month-select-options-container" *ngIf="monthSelectOpen">
+        <span class="month-select-options-wrap" data-month-select-options-wrap
+          *ngIf="monthSelectOpen"
+          [@sedDatePickerDropDownAnimation]
+          (scroll)="onScrollMonthSelectionOptions();">
+          <span class="month-select-options" data-month-select-options>
+            <button type="button" class="button month-select-option"
+              *ngFor="let monthOption of monthOptions"
+              [attr.data-month-option]="monthOption.id"
+              (click)="jumpToMonth(monthOption.date)">
+              <span class="month-select-word">{{monthOption.monthWord}}</span>
+              <span class="month-select-year">{{monthOption.year}}</span>
+            </button>
+          </span>
+        </span>
+      </span>
+    </span>
+    <button type="button" class="button next-month-button" (click)="nextMonth();">
+      <svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" viewBox="0 0 95.667 64" xml:space="preserve">
+        <path d="M0,26h76c0,0-11.444-9.91-13-14c-3.084-8.11,0-12,0-12l32.667,32L63,64c0,0-3.208-4.485,0-12c1.389-3.253,13-14,13-14H0V26z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="grid">
+    <header class="days">
+      <span class="day" *ngFor="let day of days">
+        <span class="day-label">
+          {{day.shortName}}
+        </span>
+      </span>
+    </header>
+    <div [@sedDatePickerDatesAnimation]="month" *ngIf="dates.length"
+      class="dates date-rows-{{rowCount}}">
+      <span *ngFor="let date of dates; trackBy: trackByDate" class="date">
+        <button *ngIf="date" class="date-button" type="button" (click)="selectDate(date)">{{date}}</button>
+      </span>
+    </div>
+    <div style="visibility:hidden" *ngIf="!dates.length"
+      class="dates date-rows-{{spacerRowCount}}">
+      <span *ngFor="let date of dates;" class="date"></span>
+    </div>
+  </div>
+</div>

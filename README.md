@@ -1,5 +1,18 @@
 # SedDatePicker
 
+A simple date picker component with interactive animation.
+By default the date picker component will allow you to select any date in the future or past.
+Use the month dropdown and easily scroll months, years or decades to quickly find the date needed. 
+
+The date picker component scope deliberately excludes the implementation of showing/hiding the date picker.
+This should give engineers a lot more flexibility and choice in how the date picker is utilised for different 
+applications by not assume anything about the extrinsic state of the component and problem solved.
+
+If you have any issues or would like to contribute, please raise an 
+[issue](https://github.com/saedwards/sed-date-picker/issues) or a PR with new changes.
+If you think the component doesn't quite fit your needs and could be improved, you're very welcome to start 
+a discussion about new feature requests/changes by raising an issue.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
 
 ## Development server

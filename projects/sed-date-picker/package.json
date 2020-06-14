@@ -1,0 +1,26 @@
+{
+  "name": "@sedware/date-picker",
+  "version": "0.0.1",
+  "author": "Shane Edwards (https://sedware.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saedwards/sed-date-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saedwards/sed-date-picker/issues"
+  },
+  "keywords": [
+    "angular",
+    "calendar",
+    "date-picker",
+    "sedware",
+    "jvascript",
+    "typescript",
+    "component"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  }
+}
