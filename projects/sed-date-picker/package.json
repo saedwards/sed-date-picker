@@ -1,7 +1,8 @@
 {
   "name": "@sedware/date-picker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Shane Edwards (https://sedware.com)",
+  "homepage": "https://sedware.com/date-picker.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/saedwards/sed-date-picker.git"
@@ -14,7 +15,7 @@
     "calendar",
     "date-picker",
     "sedware",
-    "jvascript",
+    "javascript",
     "typescript",
     "component"
   ],
